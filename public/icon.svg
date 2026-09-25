@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Outer Fire Emblem Circle -->
+  <circle cx="256" cy="256" r="210" fill="#dc2626" opacity="0.15" />
+  <circle cx="256" cy="256" r="190" fill="url(#redGrad)" stroke="#f87171" stroke-width="8" />
+
+  <!-- Extinguisher Top Handle and Valve -->
+  <rect x="242" y="110" width="28" height="40" rx="6" fill="#f1f5f9" />
+  <path d="M210 120 L302 120 L292 135 L220 135 Z" fill="#94a3b8" />
+  <path d="M220 100 Q256 80 292 100" stroke="#f1f5f9" stroke-width="12" fill="none" stroke-linecap="round" />
+  
+  <!-- Pressure Gauge -->
+  <circle cx="295" cy="140" r="14" fill="#ffffff" stroke="#334155" stroke-width="3" />
+  <path d="M295 140 L300 134" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Extinguisher Cylinder -->
+  <path d="M190 180 C190 150, 322 150, 322 180 L322 370 C322 395, 190 395, 190 370 Z" fill="#ffffff" />
+  <path d="M198 185 C198 160, 314 160, 314 185 L314 365 C314 388, 198 388, 198 365 Z" fill="#b91c1c" />
+  
+  <!-- Cylinder Highlight -->
+  <path d="M210 185 L210 365" stroke="rgba(255,255,255,0.3)" stroke-width="10" stroke-linecap="round" />
+
+  <!-- Label on Cylinder -->
+  <rect x="220" y="225" width="72" height="95" rx="6" fill="#0f172a" />
+  <rect x="226" y="231" width="60" height="83" rx="4" fill="#ffffff" />
+  
+  <!-- Flame Icon on Label -->
+  <path d="M256 242 C248 255 242 265 242 278 C242 292 250 300 256 300 C262 300 270 292 270 278 C270 268 266 260 256 242 Z" fill="url(#goldGrad)" />
+  <text x="256" y="318" font-family="Arial, sans-serif" font-weight="900" font-size="11" fill="#dc2626" text-anchor="middle">ABC</text>
+
+  <!-- Base Hose -->
+  <path d="M256 145 C340 145, 335 240, 335 320" stroke="#1e293b" stroke-width="12" fill="none" stroke-linecap="round" />
+  <rect x="328" y="315" width="14" height="35" rx="4" fill="#334155" />
+</svg>

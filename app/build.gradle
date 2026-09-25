@@ -1,0 +1,24 @@
+plugins {
+    id 'com.android.application' version '8.2.0' apply false
+}
+
+// Android project configuration
+ext {
+    compileSdkVersion = 33
+    minSdkVersion = 21
+    targetSdkVersion = 33
+    versionCode = 1
+    versionName = "1.0.0"
+    applicationId = "com.extintoresjuazeiro.app"
+    appName = "Extintores Juazeiro"
+}
+
+task assembleDebug {
+    group = 'build'
+    description = 'Assembles debug APK for Extintores Juazeiro'
+    doLast {
+        exec {
+            commandLine 'bash', '-c', './scripts/build-apk.sh'
+        }
+    }
+}

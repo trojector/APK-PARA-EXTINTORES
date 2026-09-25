@@ -1,0 +1,6 @@
+{
+  "name": "Extintores Juazeiro - Gestão & Orçamentos",
+  "description": "Sistema completo para controle de extintores, manutenções, clientes, serviços e emissão e compartilhamento de orçamentos profissionais em PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

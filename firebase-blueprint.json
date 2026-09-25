@@ -1,0 +1,168 @@
+{
+  "entities": {
+    "Client": {
+      "title": "Client",
+      "description": "Cliente cadastrado para extintores e propostas comerciais",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "tradeName": { "type": "string" },
+        "document": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "contactPerson": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "document", "phone", "address", "city", "state"]
+    },
+    "FireExtinguisher": {
+      "title": "FireExtinguisher",
+      "description": "Extintor cadastrado sem QR Code e sem INMETRO",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "number": { "type": "string" },
+        "patrimonyNumber": { "type": "string" },
+        "clientId": { "type": "string" },
+        "clientName": { "type": "string" },
+        "location": { "type": "string" },
+        "type": { "type": "string" },
+        "capacity": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "model": { "type": "string" },
+        "serialNumber": { "type": "string" },
+        "manufactureDate": { "type": "string" },
+        "lastMaintenanceDate": { "type": "string" },
+        "nextMaintenanceDate": { "type": "string" },
+        "lastRechargeDate": { "type": "string" },
+        "nextRechargeDate": { "type": "string" },
+        "fireClass": { "type": "string" },
+        "status": { "type": "string", "enum": ["ATIVO", "EM_MANUTENCAO", "VENCIDO", "BAIXADO"] },
+        "notes": { "type": "string" },
+        "photos": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "number", "clientId", "clientName", "location", "type", "capacity", "nextRechargeDate", "status"]
+    },
+    "ServiceItem": {
+      "title": "ServiceItem",
+      "description": "Catálogo de serviços e produtos para orçamentos",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "unit": { "type": "string" },
+        "defaultPrice": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "category", "unit", "defaultPrice"]
+    },
+    "Quote": {
+      "title": "Quote",
+      "description": "Orçamento comercial da Extintores Juazeiro",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "number": { "type": "string" },
+        "clientId": { "type": "string" },
+        "clientName": { "type": "string" },
+        "clientDocument": { "type": "string" },
+        "clientPhone": { "type": "string" },
+        "clientEmail": { "type": "string" },
+        "clientAddress": { "type": "string" },
+        "date": { "type": "string" },
+        "validUntil": { "type": "string" },
+        "responsible": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string", "enum": ["RASCUNHO", "ENVIADO", "APROVADO", "RECUSADO", "EXPIRADO"] },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentTerms": { "type": "string" },
+        "deliveryTime": { "type": "string" },
+        "warranty": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "number", "clientId", "clientName", "date", "validUntil", "responsible", "status", "subtotal", "total"]
+    },
+    "QuoteItem": {
+      "title": "QuoteItem",
+      "description": "Item individual dentro de um orçamento",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "quoteId": { "type": "string" },
+        "serviceId": { "type": "string" },
+        "productService": { "type": "string" },
+        "description": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "unitPrice": { "type": "number" },
+        "discount": { "type": "number" },
+        "subtotal": { "type": "number" },
+        "sortOrder": { "type": "number" }
+      },
+      "required": ["id", "quoteId", "productService", "quantity", "unit", "unitPrice", "subtotal"]
+    },
+    "CompanySettings": {
+      "title": "CompanySettings",
+      "description": "Dados cadastrais e comerciais da Extintores Juazeiro",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "legalName": { "type": "string" },
+        "cnpj": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" },
+        "neighborhood": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "responsibleName": { "type": "string" },
+        "responsibleRole": { "type": "string" },
+        "defaultValidityDays": { "type": "number" },
+        "defaultNotes": { "type": "string" }
+      },
+      "required": ["name", "legalName", "cnpj", "phone", "whatsapp", "city", "state"]
+    }
+  },
+  "firestore": {
+    "/clients/{clientId}": {
+      "schema": "Client",
+      "description": "Coleção de clientes da empresa"
+    },
+    "/fire_extinguishers/{extinguisherId}": {
+      "schema": "FireExtinguisher",
+      "description": "Coleção de extintores sob gestão"
+    },
+    "/services/{serviceId}": {
+      "schema": "ServiceItem",
+      "description": "Catálogo de serviços e produtos"
+    },
+    "/quotes/{quoteId}": {
+      "schema": "Quote",
+      "description": "Coleção principal de propostas e orçamentos"
+    },
+    "/quotes/{quoteId}/quote_items/{quoteItemId}": {
+      "schema": "QuoteItem",
+      "description": "Itens vinculados a cada orçamento"
+    },
+    "/company_settings/{settingId}": {
+      "schema": "CompanySettings",
+      "description": "Configurações institucionais da empresa"
+    }
+  }
+}

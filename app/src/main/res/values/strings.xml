@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Extintores Juazeiro</string>
+    <color name="primary_red">#DC2626</color>
+    <color name="dark_red">#991B1B</color>
+    <color name="bg_dark">#0F172A</color>
+    <color name="card_bg">#1E293B</color>
+    <color name="card_border">#334155</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="accent_green">#10B981</color>
+    <color name="accent_yellow">#F59E0B</color>
+    <color name="accent_blue">#3B82F6</color>
+</resources>

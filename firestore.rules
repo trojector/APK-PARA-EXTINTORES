@@ -1,0 +1,33 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Regras para Extintores Juazeiro
+    // Permite leitura e escrita operacional para clientes, extintores, serviços e orçamentos
+    
+    match /clients/{clientId} {
+      allow read, write: if true;
+    }
+    
+    match /fire_extinguishers/{extinguisherId} {
+      allow read, write: if true;
+    }
+    
+    match /services/{serviceId} {
+      allow read, write: if true;
+    }
+    
+    match /quotes/{quoteId} {
+      allow read, write: if true;
+      
+      match /quote_items/{quoteItemId} {
+        allow read, write: if true;
+      }
+    }
+    
+    match /company_settings/{settingId} {
+      allow read, write: if true;
+    }
+  }
+}
